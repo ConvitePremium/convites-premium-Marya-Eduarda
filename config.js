@@ -25,14 +25,9 @@ window.CONFIG = {
   // textos automáticos do convite.
   nome: "Marya Eduarda",
 
-  // ----- WHATSAPP (CONFIRMAR PRESENÇA) -----------------------------------
-  // numero: DDI + DDD + número, SÓ DÍGITOS (sem +, espaço, parênteses ou traço).
-  //         Ex.: 55 (Brasil) + 31 (DDD) + 985657116 -> "5531985657116"
-  // mensagem: texto que já vem pré-preenchido quando a pessoa abre o WhatsApp.
-  whatsapp: {
-    numero: "https://sites.wedy.com/xv-marya",
-    mensagem: "Olá! Confirmo minha presença no aniversário da Maria Helena."
-  },
+  // ----- CONFIRMAÇÃO DE PRESENÇA (LINK EXTERNO) ----------------------------
+  // O botão Confirmar presença abre diretamente este endereço.
+  confirmacaoUrl: "https://sites.wedy.com/xv-marya",
 
   // ----- LOCALIZAÇÃO (BOTÃO MAPA) ----------------------------------------
   // Link completo do Google Maps. Abra o local no Maps, clique em "Compartilar"

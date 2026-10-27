@@ -126,7 +126,7 @@
     <section id="mainScreen" class="screen" aria-label="Convite principal">
       <div class="stage" id="mainStage">
         <img class="art" src="assets/principal.webp" alt="Convite" loading="eager" width="941" height="1672">
-        <button class="hotspot" id="confirmBtn" data-key="confirm" data-label="WhatsApp" aria-label="Confirmar presença"></button>
+        <button class="hotspot" id="confirmBtn" data-key="confirm" data-label="Confirmação" aria-label="Confirmar presença"></button>
         <button class="hotspot" id="mapBtn" data-key="map" data-label="Localização" aria-label="Abrir localização"></button>
         <button class="hotspot" id="giftBtn" data-key="gift" data-label="Presentes" aria-label="Ver sugestões de presentes"></button>
         <button class="hotspot" id="dressBtn" data-key="dress" data-label="Dress Code" aria-label="Ver dress code"></button>
@@ -184,7 +184,7 @@
     </div>
     <div class="editor-mini">Arraste o painel pela barra acima. Arraste a área no convite e puxe a bolinha no canto para aumentar/diminuir. Use <b>?editor=1</b> no link para abrir este editor.</div>
     <div class="editor-row">
-      <select id="areaSelect"><option value="confirm">WhatsApp</option><option value="map">Localização</option><option value="gift">Presentes</option><option value="dress">Dress Code</option><option value="manual">Manual do Convidado</option><option value="countdown">Contagem (botão)</option><option value="counter">Contador (na tela)</option></select>
+      <select id="areaSelect"><option value="confirm">Confirmação</option><option value="map">Localização</option><option value="gift">Presentes</option><option value="dress">Dress Code</option><option value="manual">Manual do Convidado</option><option value="countdown">Contagem (botão)</option><option value="counter">Contador (na tela)</option></select>
       <label>L <input id="inpL" type="number" step="0.1"></label>
       <label>T <input id="inpT" type="number" step="0.1"></label>
       <label>W <input id="inpW" type="number" step="0.1"></label>
@@ -560,9 +560,14 @@
         $("confirmBtn").addEventListener("click", (e)=>{
           if(document.body.classList.contains("editor-on")) return;
           e.preventDefault(); e.stopPropagation();
-          const num = (C.whatsapp.numero || "").replace(/\D/g,"");
-          const msg = encodeURIComponent(C.whatsapp.mensagem || "");
-          window.open("https://wa.me/" + num + "?text=" + msg, "_blank");
+          // Confirmação externa: abrir o endereço configurado sem convertê-lo em número de WhatsApp.
+          const destino = (CFG.confirmacaoUrl || "").trim();
+          if(destino && /^https?:\/\//i.test(destino)) {
+            window.location.assign(destino);
+          } else {
+            console.error("Link de confirmação inválido em config.js: confirmacaoUrl");
+            alert("O link de confirmação de presença não está configurado corretamente.");
+          }
         });
       }
       if(hasMap && $("mapBtn")){
@@ -693,7 +698,7 @@
       // EDITOR VISUAL (?editor=1) — mostra somente recursos ativos
       // ====================================================================
       const editorLabels = {
-        confirm:"WhatsApp",
+        confirm:"Confirmação",
         map:"Localização",
         gift:"Presentes",
         pix:"PIX (copiar chave)",
