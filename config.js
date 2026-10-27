@@ -62,7 +62,7 @@ window.CONFIG = {
   pix: {
     ativo: true,
     chave: "21916461589708",
-    posicao: {"left":16.8,"top":64.0,"width":66.0,"height":8.2}
+    posicao: {"left":53.42492012779553,"top":70.9044877959101,"width":23.46965792232428,"height":10.38641411176334}
   },
 
   // ----- TEXTOS DOS BOTÕES -----------------------------------------------
@@ -89,9 +89,9 @@ window.CONFIG = {
   // mostrarTexto: true mostra “Voltar”; false deixa apenas a área clicável.
   // A posição pode ser alterada no editor ?editor=1.
   botoesVoltar: {
-    presentes: { mostrarTexto:false, posicao: {"left":24.2,"top":83.6,"width":55.0,"height":7.8} },
-    dresscode: { mostrarTexto:true, posicao: {"left":26.805437549920125,"top":86.88550214891683,"width":46.581485248602235,"height":5.424627114446271} },
-    manual: { mostrarTexto:true, posicao: {"left":25.783057732627793,"top":85.2744510457582,"width":47.80830358925719,"height":5.309555171188598} }
+    presentes: { mostrarTexto:false, posicao: {"left":30.334185303514374,"top":88.54821976553966,"width":38.43770280051917,"height":5.843723190119328} },
+    dresscode: { mostrarTexto:false, posicao: {"left":32.9396228534345,"top":89.30207112158331,"width":34.7220696884984,"height":5.654781975349418} },
+    manual: { mostrarTexto:false, posicao: {"left":32.530667806509584,"top":87.80609305912114,"width":34.72205408845847,"height":5.769856113484653} },
   },
 
   // ----- POSIÇÃO DOS BOTÕES NA TELA PRINCIPAL ----------------------------
@@ -100,12 +100,14 @@ window.CONFIG = {
   //   left/top: canto superior esquerdo do botão
   //   width/height: tamanho do botão
     hotspots: {
-        confirm: { left:19.111031037141306, top:63.8032059022128, width:15.963035699920129, height:8.57238650880756 },
-        map: { left:42.3313764835857, top:64.03332543810177, width:15.611963461541478, height:8.522989476077747 },
-        gift: { left:64.6203873670928, top:63.907444274051855, width:16.091044953075077, height:8.643484137471408 },
-        dress: { left:30.670926517571885, top:77.02597723193821, width:15.682105506190094, height:8.298251846116688 },
-        manual: { left:53.98780574768387, top:76.56567628964217, width:16.29551467651757, height:8.528402317264716 }
+        confirm: { left:23.813897076478366, top:59.775579241755004, width:12.895943048162941, height:7.651784624215451 },
+        map: { left:43.76268014772308, top:59.89063012670264, width:12.749340533226782, height:7.832533672878546 },
+        gift: { left:63.189068102915485, top:59.879826393104295, width:13.22842202476038, height:7.722886642634418 },
+        dress: { left:32.92012467551917, top:71.50238348340604, width:13.228437624800318, height:7.607804822427726 },
+        manual: { left:53.57885070075895, top:71.50238348340605, width:13.22842202476038, height:8.183183195175353 }
   },
+
+
 
   // ----- CONTAGEM REGRESSIVA ---------------------------------------------
   // Formato da data: ANO-MÊS-DIAT HORA:MINUTO:SEGUNDO (sem espaço antes do T).
